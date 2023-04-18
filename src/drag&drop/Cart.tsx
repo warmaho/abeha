@@ -16,8 +16,6 @@ const CardxD = props => {
     e.dataTransfer.effectAllowed = 'move'
     e.dataTransfer.setData('uid', props.uid)
   }
-    console.log("cart")
-    console.log(cart)
   return (
     <div
       className="card"
@@ -59,7 +57,7 @@ const CardxD = props => {
                             <Avatar
                                 sx={{ width: 86, height: 86 }}
                                 alt={e.name}
-                                src={e.sprites.front_default} />
+                                src={e?.sprites?.front_default} />
                         }
                         title={<Typography variant="subtitle1" color="secondary" component="div">
                             {e.name}

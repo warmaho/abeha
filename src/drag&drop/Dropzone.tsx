@@ -27,15 +27,15 @@ const Dropzone = (props: { status: number }) => {
 
   const handleDrop = e => {
     const uid = parseInt(e.dataTransfer.getData('uid'), 10)
-    const id = e.dataTransfer.getData('id')
+    const info = e.dataTransfer.getData('info')
     setIsDraggingOver(false)
     context.changeCardStatus(uid, props.status)
-    dispatch({type: 'CART', payload: [...cart, id]})
+    dispatch({type: 'CART', payload: [...cart, JSON.parse(info)]})
   }
 
-  const clickCart = (uid: any, id:any, props:any) => {
+  const clickCart = (uid: any, id:any, info:any) => {
     context.changeCardStatus(uid, props.status===1?2:1)
-    dispatch({type: 'CART', payload: [...cart, props]})
+    dispatch({type: 'CART', payload: [...cart, info]})
   }
   const clickClear = (status) => {
     context.changeCartStatus(status)
@@ -50,8 +50,6 @@ const Dropzone = (props: { status: number }) => {
           e.status=1;
         }
       })
-      console.log("data")
-      console.log(data.filter(e=>e.status===1))
       context.setCards(data)
     }
   },[data])

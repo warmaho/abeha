@@ -13,6 +13,7 @@ const CardxD = props => {
     e.dataTransfer.effectAllowed = 'move'
     e.dataTransfer.setData('uid', props.uid)
     e.dataTransfer.setData('id', props.id)
+    e.dataTransfer.setData('info', JSON.stringify(props))
   }
 
   return (
