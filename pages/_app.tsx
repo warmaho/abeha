@@ -24,7 +24,7 @@ function MyApp(props: MyAppProps) {
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="description" content="Description" />
                 <meta name="keywords" content="Keywords" />
-                <title>e-Commerce Gapsi</title>
+                <title>Abeha Test - Pokemón</title>
 
                 <link rel="manifest" href="/manifest.json" />
                 <link

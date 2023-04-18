@@ -29,12 +29,11 @@ const CardxD = props => {
                     <Avatar
                         sx={{ width: 86, height: 86 }}
                         alt={props.name}
-                        src={props.image} />
+                        src={props.sprites.front_default} />
                 }
                 action={
-                   props.canAddToCart &&
-                    <IconButton aria-label="settings" onClick={()=>props.clickCart(props.uid, props.id)}>
-                        <i className="fas fa-cart-plus"></i>
+                    <IconButton aria-label="settings" onClick={()=>props.clickCart(props.uid, props.id, props)}>
+                        <i className="fas fa-plus"></i>
                     </IconButton>
                 }
                 title={<Typography variant="subtitle1" color="secondary" component="div">
@@ -42,10 +41,7 @@ const CardxD = props => {
                 </Typography>}
                 subheader={<div>
                     <Typography variant="body1" component="div">
-                        Precio: {props.price}
-                    </Typography>
-                    <Typography variant="body1"  component="div">
-                        {props.availabilityStatusDisplayValue}
+                        ID: {props.id}
                     </Typography>
                 </div>}
             />

@@ -78,21 +78,20 @@ export default function SearchAppBar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    <Image src="/images/logo.png" width={148} height={70}/>
+                    <Image src="/images/logo.png" width={200} height={80}/>
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        e-Commerce
-
+                        Finder
                     </Typography>
                     <Alert variant="outlined" severity="warning" className={alert}>
                         Ingresa un termino de busqueda
                     </Alert>
                     <Alert variant="outlined" severity="info" className={alert2}>
-                       Busca algun articulo para empezar
+                       Busca algún pokemón para empezar
                     </Alert>
                     <Search>
                         <SearchIconWrapper >

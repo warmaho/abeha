@@ -9,13 +9,13 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useDispatch } from 'react-redux'
 import Button from "@mui/material/Button";
 
-const fetcher = async (query: string, search: string, page: number) =>
+const fetcher = async (query: string, search: string) =>
     fetch('/api/graphql', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify({ query,  variables: {text:search, page:page} }),
+      body: JSON.stringify({ query,  variables: {text:search} }),
     })
         .then((res) => res.json())
         .then((json) => json.data)
@@ -37,13 +37,12 @@ const Home: NextPage = () => {
     React.useEffect(()=>{
         const fetchData = async () => {
             try{
-                if(search!=="" && page>0){
+                if(search!==""){
                     let union=[];
                     setOpen(true)
-                    const data = await fetcher('{ search { id, description, name, price, canAddToCart, image, availabilityStatusDisplayValue } } ',search, page)
+                    const data = await fetcher('{ search { id, name, sprites { front_default } } } ',search)
                     setOpen(false)
-
-                    union=[...dataStorage, ...data.search]
+                    union=[...dataStorage, data.search]
                     union.forEach((e:any,index: number)=> {
                         e.uid=index;
                         e.status = 2
@@ -58,6 +57,7 @@ const Home: NextPage = () => {
                     dispatch({type: 'DATA', payload: result1.filter(Boolean)})
                 }
             }catch (e) {
+                alert("No se encontro ese pokemón")
                 dispatch({type: 'DATA', payload: []})
                 dispatch({type: 'SEARCH', payload: ''})
 

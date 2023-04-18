@@ -1,41 +1,36 @@
-# e-commerce Gapsi
+# Test Abeha
 
 Proyecto basado en NextJS y React, con graphql y WPA, Redux 
+
+## No contiene
+Darle un bonito diseño a la app. (apariencia de pokédex, icono de la app,
+splashscreen, etc).
+
+Redux persist.
+
 ## Si contiene
-• El header de la aplicación debe ser e-Commerce Gapsi y deberá usar el logo de la página web de Gapsi.
+Generar UI/UX para buscar y mostrar un pokémon.
 
-• Se debe mostrar una página que permita al usuario realizar búsqueda de productos y visualizar la lista de productos obtenidos
-mediante el consumo del servicio Rest proporcionado para esta prueba. La ágina debe permitir al usuario introducir el criterio de búsqueda y
-listar los resultados obtenidos.
+Hay que validar que escriban algo en el input.
 
-• De cada producto se debe mostrar su nombre, precio y la imagen correspondiente
+Si el pokémon existe se deberá mostrar su nombre, foto y descripción.
 
-• El servicio Rest permite obtener más páginas de productos acorde al criterio de búsqueda. Es necesario que a medida que el usuario
-realice scroll vertical, la página realice la carga de los productos de la siguiente página que corresponda.
+En caso de que no se encuentre el pokémon se deberá avisar al usuario por
+medio de un alerta o cualquier otro elemento que el pokémon buscado no existe.
 
-• Deseable: Se requiere agregar productos al carrito arrastrándolos al mismo.
+Sección de pokémons favoritos
 
-• Deseable: Cuando un producto ya está en el carrito entonces no deberá aparecer en la lista.
+Utilizar cualquier método para guardar los pokemones favoritos.
 
-• Deseable: En la parte superior derecha deberá aparecer un botón para reiniciar la aplicación e iniciar nuevamente.
+Guardar pokémons favoritos.
 
-• La lista de productos deberá cargarse con virtual scroll.
+Ver los pokémons favoritos.
 
-• Consumir el servicio web descrito en el apartado de insumos.
+Borrar los pokémons favoritos.
 
-• Generar build con minificado y ofuscado de la aplicación.
+Usar redux (Sagas)
 
-• Deseable: Los productos deberán cargarse en el carrito utilizando drag & drop.
 
-• Deseable: La solución deberá implementar al menos 1 feature de una PWA.
-
-• Deseable: Utilizar Material-UI
-
-•  Deseable: Implementar GraphQL
-
-• Deseable: Usar font-awesome o similar desde el CDN.
-
-• Deseable: Usar bootstrap o similar desde el CDN.
 ## How to use
 
 Ejecutalo con [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/)

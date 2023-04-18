@@ -33,9 +33,9 @@ const Dropzone = (props: { status: number }) => {
     dispatch({type: 'CART', payload: [...cart, id]})
   }
 
-  const clickCart = (uid: any, id:any) => {
+  const clickCart = (uid: any, id:any, props:any) => {
     context.changeCardStatus(uid, props.status===1?2:1)
-    dispatch({type: 'CART', payload: [...cart, id]})
+    dispatch({type: 'CART', payload: [...cart, props]})
   }
   const clickClear = (status) => {
     context.changeCartStatus(status)
